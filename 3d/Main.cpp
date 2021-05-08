@@ -39,7 +39,7 @@ void init() {
 
 	// Создаем окно с заголовком "Cube", размером 640х480 и расположенным по центру экрана.
 
-	window = SDL_CreateWindow("Cube", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
+	window = SDL_CreateWindow("Practika", SDL_WINDOWPOS_CENTERED, SDL_WINDOWPOS_CENTERED, width, height, SDL_WINDOW_SHOWN | SDL_WINDOW_OPENGL);
 
 	SDL_GLContext glcontext = SDL_GL_CreateContext(window); // создаем контекст OpenGL
 
