@@ -72,18 +72,28 @@ int main(int argc, char* argv[]) {
 
 	bool running = true;
 
-	float yrf = 0; // угол поворота
-
+	float xrf = 0; // угол поворота
+	double x = 0, lastX = 0;
+	bool isDrag = false;
 	while (running) {
 
 		SDL_Event event; // события SDL
+		
+		
 
 		while (SDL_PollEvent(&event)) { // начинаем обработку событий
+			
 			switch (event.type) { // смотрим:
 			case SDL_QUIT: // если произошло событие закрытия окна, то завершаем работу программы
 				running = false;
 				break;
-
+			case SDL_MOUSEBUTTONDOWN:
+				lastX = event.motion.x;
+				isDrag = true;
+				break;
+			case SDL_MOUSEBUTTONUP:
+				isDrag = false;
+				break;
 			case SDL_KEYDOWN: // если нажата клавиша
 				switch (event.key.keysym.sym) { // смотрим какая
 				case SDLK_ESCAPE: // клавиша ESC
@@ -93,14 +103,19 @@ int main(int argc, char* argv[]) {
 				break;
 			}
 		}
+		if (isDrag) {
+			x = event.motion.x;
+		}
 
 		// пока программа запущена изменяем угол поворота, тем самым вращая отображение
 
-		yrf -= 0.5;
+		xrf -= (lastX - x);
+
+		lastX = x;
 
 		initMono->Update();
 
-		render->Update(0,yrf,0); //Обновляем кадр с повротом по оси у
+		render->Update(0,xrf,0); //Обновляем кадр с повротом по оси у
 
 
 		// обновляем экран

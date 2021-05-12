@@ -10,7 +10,7 @@ public:
 	/// Сразу создается с точками
 	/// </summary>
 	/// <param name=""></param>
-	Mesh(std::vector<Point3D>);
+	Mesh(std::vector<Point3D>, Point3D* color = new Point3D(1, 1, 1));
 	Mesh();
 	/// <summary>
 	/// возвращает все точки
@@ -21,7 +21,7 @@ public:
 	/// Добавляет точки из вектора
 	/// </summary>
 	/// <param name=""></param>
-	void AddVertecles(std::vector<Point3D>&);
+	void AddVertecles(std::vector<Point3D>&, Point3D* color = new Point3D(1, 1, 1));
 	/// <summary>
 	/// Добавляет одну точку
 	/// </summary>
@@ -31,8 +31,10 @@ public:
 	/// Соединятет меши в один
 	/// </summary>
 	/// <param name="mesh"></param>
-	void Combine(Mesh &mesh);
+	void Combine(Mesh& mesh);
+	Point3D GetColor();
 private:
 	std::vector<Point3D> vertecles;
+	Point3D color;
 };
 

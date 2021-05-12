@@ -1,17 +1,2 @@
-﻿  InitMono.cpp
-C:\3d\3d\InitMono.cpp(11,20): warning C4018: <: несоответствие типов со знаком и без знака
-C:\3d\3d\InitMono.cpp(20,20): warning C4018: <: несоответствие типов со знаком и без знака
-  Main.cpp
-  Mesh.cpp
-C:\3d\3d\Mesh.cpp(19,20): warning C4018: <: несоответствие типов со знаком и без знака
-C:\3d\3d\Mesh.cpp(32,20): warning C4018: <: несоответствие типов со знаком и без знака
-  MonoBahivour.cpp
-  Practika.cpp
-C:\3d\3d\Practika.cpp(76,20): warning C4018: <: несоответствие типов со знаком и без знака
-C:\3d\3d\Practika.cpp(87,20): warning C4018: <: несоответствие типов со знаком и без знака
-C:\3d\3d\Practika.cpp(103,9): warning C4018: <: несоответствие типов со знаком и без знака
-  Render.cpp
-C:\3d\3d\Render.cpp(19,20): warning C4018: <: несоответствие типов со знаком и без знака
-C:\3d\3d\Render.cpp(59,20): warning C4018: <: несоответствие типов со знаком и без знака
-  Создание кода...
+﻿  Main.cpp
   3d.vcxproj -> C:\3d\Debug\3d.exe
