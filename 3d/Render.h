@@ -43,6 +43,7 @@ public:
 	/// <param name="y"></param>
 	/// <param name="z"></param>
 	void SetCameraPosition(double x, double y, double z);
+	Point3D* GetCameraPosition();
 private:
 	std::vector<Mesh> meshes;
 	int widthLine = 5;

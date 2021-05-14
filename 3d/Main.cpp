@@ -72,8 +72,9 @@ int main(int argc, char* argv[]) {
 
 	bool running = true;
 
-	float xrf = 0; // угол поворота
-	double x = 0, lastX = 0;
+	float xrf = 0, yrf = 0; // угол поворота
+	double x = 0, lastX = 0, y = 0, lastY = 0;
+	int dir = 0;
 	bool isDrag = false;
 	while (running) {
 
@@ -87,8 +88,15 @@ int main(int argc, char* argv[]) {
 			case SDL_QUIT: // если произошло событие закрытия окна, то завершаем работу программы
 				running = false;
 				break;
+			case SDL_MOUSEWHEEL:
+				dir = event.wheel.y;
+				render->SetCameraPosition(render->GetCameraPosition()->x,
+					render->GetCameraPosition()->y,
+					render->GetCameraPosition()->z + dir);
+				break;
 			case SDL_MOUSEBUTTONDOWN:
 				lastX = event.motion.x;
+				lastY = event.motion.y;
 				isDrag = true;
 				break;
 			case SDL_MOUSEBUTTONUP:
@@ -105,17 +113,19 @@ int main(int argc, char* argv[]) {
 		}
 		if (isDrag) {
 			x = event.motion.x;
+			y = event.motion.y;
 		}
 
 		// пока программа запущена изменяем угол поворота, тем самым вращая отображение
 
 		xrf -= (lastX - x);
-
+		yrf -= (lastY - y);
 		lastX = x;
+		lastY = y;
 
 		initMono->Update();
 
-		render->Update(0,xrf,0); //Обновляем кадр с повротом по оси у
+		render->Update(yrf,xrf,0); //Обновляем кадр с повротом по оси у
 
 
 		// обновляем экран

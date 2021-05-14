@@ -50,6 +50,11 @@ void Render::SetCameraPosition(double x, double y, double z)
 	SetCameraPosition(new Point3D(x, y, z));
 }
 
+Point3D* Render::GetCameraPosition()
+{
+	return this->cameraPoint;
+}
+
 void Render::PaintMesh(Mesh mesh)
 {
 
