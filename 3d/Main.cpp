@@ -50,7 +50,7 @@ void init() {
 	// Инициализация OpenGL
 
 
-	glClearColor(0.0f, 0.0f, 0.0f, 0.0f); // устанавливаем фоновый цвет на черный
+	glClearColor(1.0f, 1.0f, 1.0f, 1.0f); // устанавливаем фоновый цвет на черный
 	glClearDepth(1.0);
 	glDepthFunc(GL_LESS);
 	glEnable(GL_DEPTH_TEST); // включаем тест глубины
