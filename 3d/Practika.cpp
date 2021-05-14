@@ -54,18 +54,20 @@ void Practika::Start()
 	Point3D CardPoint14(14., -1., 0.);
 	point.push_back(CardPoint14);
 	//¬от тут создаетс€ меш из точек и сразу вывожитс€
-	render->CreateMesh(&point);
+	
 
 	vector<double> weight = { 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1., 1. };
 	vector<double> knots = { 0., 0., 0., 0., 0., 0., 0., 0., 0., 1., 1., 1., 1., 1., 1., 1., 1., 1. };
 
-
+	vector<Point3D>* line = new vector<Point3D>();
 	for (int U = 0; U < 10; U += 1)
 	{
 		double steps = U * 0.1;
 		Point3D result = ResultNurbs(point, weight, knots, 3, steps);
+		line->push_back(result);
 		//cout << result.x << "\t" << result.y << "\t" << result.z << endl;
 	}
+	render->CreateMesh(line, new Point3D(0, 0, 0));
 
 }
 
