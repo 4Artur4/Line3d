@@ -28,9 +28,9 @@ Mesh* Render::CreateMesh()
 	return mesh;
 }
 
-Mesh* Render::CreateMesh(std::vector<Point3D> *vertecles, Point3D* color)
+Mesh* Render::CreateMesh(std::vector<Point3D> *vertecles, Point3D* color, int width)
 {
-	Mesh* mesh = new Mesh(*vertecles, color);
+	Mesh* mesh = new Mesh(*vertecles, color, width);
 	this->meshes.push_back(*mesh);
 	return mesh;
 }
@@ -53,7 +53,7 @@ void Render::SetCameraPosition(double x, double y, double z)
 void Render::PaintMesh(Mesh mesh)
 {
 
-	glLineWidth(this->widthLine);
+	glLineWidth(mesh.GetWidth());
 	glBegin(GL_LINES);
 	glColor3d(mesh.GetColor().x, mesh.GetColor().y, mesh.GetColor().z);
 	int countVertex = 0;

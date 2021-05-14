@@ -25,7 +25,7 @@ public:
 	/// </summary>
 	/// <param name="vertecles"></param>
 	/// <returns></returns>
-	Mesh* CreateMesh(std::vector<Point3D> *vertecles, Point3D* color = new Point3D(1, 1, 1));
+	Mesh* CreateMesh(std::vector<Point3D> *vertecles, Point3D* color = new Point3D(1, 1, 1), int width = 5);
 	/// <summary>
 	/// Добавляет меш в массив отриосовки
 	/// </summary>

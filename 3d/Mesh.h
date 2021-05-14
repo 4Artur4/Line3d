@@ -10,7 +10,7 @@ public:
 	/// —разу создаетс€ с точками
 	/// </summary>
 	/// <param name=""></param>
-	Mesh(std::vector<Point3D>, Point3D* color = new Point3D(1, 1, 1));
+	Mesh(std::vector<Point3D>, Point3D* color = new Point3D(1, 1, 1), int width = 5);
 	Mesh();
 	/// <summary>
 	/// возвращает все точки
@@ -33,8 +33,10 @@ public:
 	/// <param name="mesh"></param>
 	void Combine(Mesh& mesh);
 	Point3D GetColor();
+	int GetWidth();
 private:
 	std::vector<Point3D> vertecles;
 	Point3D color;
+	int width = 5;
 };
 

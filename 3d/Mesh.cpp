@@ -1,7 +1,8 @@
 #include "Mesh.h"
 
-Mesh::Mesh(std::vector<Point3D> vertecles, Point3D* color)
+Mesh::Mesh(std::vector<Point3D> vertecles, Point3D* color, int width)
 {
+	this->width = width;
 	this->color = *color;
 	this->vertecles = vertecles;
 }
@@ -39,4 +40,9 @@ void Mesh::Combine(Mesh &mesh)
 Point3D Mesh::GetColor()
 {
 	return color;
+}
+
+int Mesh::GetWidth()
+{
+	return width;
 }
